@@ -1,7 +1,6 @@
 #ifndef _EDGE_H_
 #define _EDGE_H_
 #include "Weight.h"
-#include <algorithm>
 
 class Edge {
 private:

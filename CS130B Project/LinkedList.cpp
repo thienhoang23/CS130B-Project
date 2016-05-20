@@ -1,43 +1,50 @@
 #include "LinkedList.h"
+#include "Node.h"
+#include <string>
 
 LinkedList::LinkedList() {
 	head = tail = nullptr;
 }
 
-//COPY CONSTRUCTOR
-LinkedList::LinkedList(const LinkedList& l) {
-	delete[] this;
-	*this = l;
-}
-
-//ASSIGNMENT OPERATOR
-LinkedList& LinkedList::operator=(const LinkedList& l) {
-	if (head != nullptr)
-		delete this;
-	if (l.head == nullptr)
-		return;
-	this->head = new Node(l.head->vertex_id,l.head->w);
-	this->tail = this->head;
-	for (Node* it = l.head; it != nullptr; it = it->next)
-		this->tail = new Node(it->vertex_id, it->w);
-}
-
 //DESCTRUCTOR
 LinkedList::~LinkedList() {
-	while (head != nullptr) {
-		Node *cur= head;
-		head = head->next;
+	while (this->head != nullptr) {
+		Node *cur= this->head;
+		this->head = this->head->next;
 		delete cur;
 	}
-	tail = head;
+	this->tail = this->head;
 }
 
 void LinkedList::add(Node* n) {
+	if (tail == nullptr) {
+		tail = n;
+		head = tail;
+		return;
+	}
 	this->tail->next = n;
 	this->tail = n;
 }
 
 void LinkedList::add(int id, weight w) {
+	if (tail == nullptr) {
+		tail = new Node(id, w);
+		head = tail;
+		return;
+	}
 	this->tail->next = new Node(id, w);
 	this->tail = tail->next;
+}
+
+std::string LinkedList::toString() {
+	if (head == nullptr)
+		return "()";
+	std::string result = "(";
+	for (Node* cur = head; cur != nullptr; cur = cur->next) {
+		result += std::to_string(cur->vertex_id);
+		if (cur != tail)
+			result += ",";			
+	}
+	result += ")";
+	return result;
 }

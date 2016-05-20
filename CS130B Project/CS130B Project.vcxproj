@@ -110,22 +110,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Algortithm.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphUnitTest.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Heap.h" />
+    <ClInclude Include="LinkedListUnitTest.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="tddFuncs.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="Weight.h" />
+    <ClInclude Include="WeightUnitTest.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Algorithm.cpp" />
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Graph.cpp" />
-    <ClCompile Include="Helpers.cpp" />
     <ClCompile Include="LinkedList.cpp" />
-    <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="tddFuncs.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="Weight.cpp" />
   </ItemGroup>

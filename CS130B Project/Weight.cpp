@@ -1,5 +1,7 @@
 #include "Weight.h"
-#include <algorithm>
+#include "Helpers.h"
+#include <iostream>
+#include <string>
 
 weight::weight(int dim, int* vector) {
 	this->dim = dim;
@@ -8,14 +10,20 @@ weight::weight(int dim, int* vector) {
 		this->vector[i] = vector[i];
 }
 
+weight::~weight() {
+	delete[] vector;
+}
+
 int weight::compare(weight w) {
-	if (std::min_element(this->vector[0], this->vector[dim - 1]) < std::min_element(w.vector[0], w.vector[dim - 1]))
+	if (min(this->vector, this->dim) < min(w.vector, w.dim))
 		return -1;
-	else if (std::min_element(this->vector[0], this->vector[dim - 1]) == std::min_element(w.vector[0], w.vector[dim - 1])) {
-		if (std::max_element(this->vector[0], this->vector[dim - 1]) < std::max_element(w.vector[0], w.vector[dim - 1]))
+	else if (min(this->vector, this->dim) == min(w.vector, w.dim)) {
+		if (max(this->vector, this->dim) < max(w.vector, w.dim))
 			return -1;
-		if (std::max_element(this->vector[0], this->vector[dim - 1]) == std::max_element(w.vector[0], w.vector[dim - 1]))
+		else if (max(this->vector, this->dim) == max(w.vector, w.dim))
 			return 0;
+		else
+			return 1;
 	}
 	else
 		return 1;
@@ -34,9 +42,67 @@ weight& weight::operator =(const weight& w){
 	this->vector = new int[dim];
 	for (int i = 0; i < dim; i++)
 		this->vector[i] = w.vector[i];
+	return *this;
 };
 
 weight::weight() {
 	dim = 0;
-	vector = NULL;
+	vector = nullptr;
+}
+
+std::string weight::toString(){
+	if(vector == nullptr)
+		return "";
+	std::string result = "(";
+	for(int i=0;i<dim;i++){
+		if(i!=dim-1){
+			result+=std::to_string(vector[i]);
+			result+= ',';
+		}
+		else
+			result+= std::to_string(vector[i]);
+	}
+	result+= ')';
+	return result;
+}
+
+weight operator +(weight& w1, weight& w2) {
+	if (w1.dim != w2.dim)
+		return w1;
+	weight result = w1;
+	for (int i = 0; i < w1.dim; i++)
+		result.vector[i] += w2.vector[i];
+	return result;
+}
+weight operator -(weight& w1, weight& w2) {
+	if (w1.dim != w2.dim)
+		return w1;
+	weight result = w1;
+	for (int i = 0; i < w1.dim; i++)
+		result.vector[i] -= w2.vector[i];
+	return result;
+}
+
+bool operator ==(weight& w1, weight& w2) {
+	return (w1.compare(w2) == 0);
+}
+
+bool operator >(weight& w1, weight& w2) {
+	return (w1.compare(w2) == 1);
+}
+
+bool operator !=(weight& w1, weight& w2) {
+	return !(w1 == w2);
+}
+
+bool operator >=(weight& w1, weight& w2) {
+	return (w1>w2)||(w1==w2);
+}
+
+bool operator <(weight& w1, weight& w2) {
+	return !(w1>=w2);
+}
+
+bool operator <=(weight& w1, weight& w2) {
+	return !(w1>w2);
 }

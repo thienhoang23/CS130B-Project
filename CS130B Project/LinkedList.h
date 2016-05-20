@@ -1,19 +1,11 @@
 #ifndef _LINKEDLIST_H_
 #define _LINKEDLIST_H_
 #include "Weight.h"
+#include "Node.h"
+#include <string>
 
 class LinkedList {
 private:
-	struct Node {
-		int vertex_id;
-		Node* next;
-		weight w;
-		Node(int id, weight w) {
-			this->vertex_id = id;
-			this->next = nullptr;
-			this->w = w;
-		}
-	};
 	Node* head, *tail;
 public:
 	Node* getTail() {return tail;}
@@ -23,6 +15,7 @@ public:
 	LinkedList();
 	LinkedList(const LinkedList& l);
 	LinkedList& operator =(const LinkedList& l);
+	std::string toString();
 	~LinkedList();
 };
 
