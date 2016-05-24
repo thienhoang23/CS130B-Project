@@ -30,4 +30,32 @@ T max(T* array, int size) {
 	return max;
 }
 
+template<class T>
+int minIndex(T* array, int size) {
+	if (size <= 0)
+		return NULL;
+	int index=0;
+	T min = array[0];
+	for (int i = 0; i < size; i++)
+		if (array[i] < min) {
+			min = array[i];
+			index = i;
+		}	
+	return index;
+}
+
+template<class T>
+T max(T* array, int size) {
+	if (size <= 0)
+		return NULL;
+	int index = 0;
+	T max = array[0];
+	for (int i = 0; i < size; i++)
+		if (array[i] > max) {
+			max = array[i];
+			index = i;
+		}
+	return index;
+}
+
 #endif // !_HELPERS_H_

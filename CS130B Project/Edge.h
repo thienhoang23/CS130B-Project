@@ -15,5 +15,6 @@ public:
 	int getV2() { return v2; }
 	Edge(const Edge& src);
 	Edge& operator =(const Edge& rhs);
+	//TO DO: DESTRUCTOR
 };
 #endif 

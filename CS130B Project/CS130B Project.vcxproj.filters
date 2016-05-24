@@ -48,6 +48,15 @@
     <ClInclude Include="GraphUnitTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EdgeUnitTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeapUnitTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Edge.cpp">
@@ -69,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tddFuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
