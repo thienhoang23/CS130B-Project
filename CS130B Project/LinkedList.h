@@ -13,9 +13,11 @@ public:
 	void add(int id, weight w);
 	void add(Node* n);
 	LinkedList();
-	LinkedList(const LinkedList& l);
-	LinkedList& operator =(const LinkedList& l);
+	//LinkedList(const LinkedList& l);
+	//LinkedList& operator =(const LinkedList& l);
 	std::string toString();
+	void remove(int vertex_id);
+	bool in(int vetex_id);
 	~LinkedList();
 };
 

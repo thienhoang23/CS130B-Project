@@ -12,8 +12,10 @@ private:
 	int dim;
 public:
 	~weight();
-	weight();
 	weight(int dim, int* vector);
+	weight(int dim);
+	int* getVector() { return vector; }
+	int getDim() { return dim; }
 	int compare(weight w);
 	weight(const weight& w);
 	std::string toString();

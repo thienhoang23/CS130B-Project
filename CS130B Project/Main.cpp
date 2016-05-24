@@ -3,7 +3,7 @@
 #include "LinkedListUnitTest.h"
 #include "GraphUnitTest.h"
 #include "EdgeUnitTest.h"
-#include "HeapUnitTest.h"
+
 using namespace std;
 
 int main() {
@@ -23,8 +23,6 @@ int main() {
 	cout << "UNIT TEST FOR EDGE" << endl;
 	RunAllEdgeUnitTests();
 	cout << endl;
-	cout << "UNIT TEST FOR HEAP" << endl;
-	RunAllHeapUnitTests();
 	char c;
 	cin >> c;
 	return 0;

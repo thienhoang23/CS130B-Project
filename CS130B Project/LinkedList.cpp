@@ -48,3 +48,25 @@ std::string LinkedList::toString() {
 	result += ")";
 	return result;
 }
+
+bool LinkedList::in(int vetex_id) {
+	if (head == nullptr)
+		return false;
+	for (Node* cur = head; cur != nullptr; cur = cur->next) {
+		if (cur->vertex_id == vetex_id)
+			return true;
+	}
+	return false;
+}
+
+void LinkedList::remove(int vertex_id) {
+	if (in(vertex_id) == false)
+		return;
+	for (Node* cur = head; cur != nullptr; cur = cur->next)
+		if (cur->next->vertex_id == vertex_id) {
+			Node* temp = cur->next;
+			cur->next = cur->next->next;
+			delete temp;
+		}
+	return;
+}

@@ -4,14 +4,19 @@
 #include <string>
 
 struct Node {
+	//Variables
 	int vertex_id;
-	Node* next;
 	weight w;
+	Node* next;
+	
+	//Constructor
 	Node(int id, weight w) {
 		this->vertex_id = id;
 		this->next = nullptr;
 		this->w = w;
 	}
+
+	//Method
 	std::string toString() {
 		return std::to_string(vertex_id);
 	}

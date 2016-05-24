@@ -45,7 +45,7 @@ int minIndex(T* array, int size) {
 }
 
 template<class T>
-T max(T* array, int size) {
+int maxIndex(T* array, int size) {
 	if (size <= 0)
 		return NULL;
 	int index = 0;

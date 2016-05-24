@@ -1,6 +1,8 @@
 #include "Graph.h"
 #include <iostream>
 #include <string>
+#include "Node.h"
+
 
 Graph::Graph(int numV, int numE) {
 	this->numV = numV;
@@ -38,4 +40,16 @@ std::string Graph::toString() {
 			result += '\n';
 	}
 	return result;
+}
+
+bool Graph::isNeighbor(int v1, int v2) {
+	return g[v1].isConnected(v2);
+}
+
+bool Graph::isKnownNeighbor(int v1,int v2) {
+	if (isNeighbor(v1, v2) == false)
+		return false;
+	if (g[v2].getKnown() == false)
+		return false;
+	return true;
 }

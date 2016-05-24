@@ -38,9 +38,29 @@ void TestLinkedListAdding(){
 	delete l;
 }
 
+void TestLinkedListIn() {
+	LinkedList* l = new LinkedList();
+	assertEquals(false, l->in(0), "Test In() Empty LinkedList");
+	int arr[1] = { 1 };
+	weight w = weight(1, arr);
+	l->add(0, w);
+	assertEquals(true, l->in(0), "True Test");
+	assertEquals(false, l->in(1), "False Test");
+}
+
+void TestLinkedListRemove() {
+	LinkedList* l = new LinkedList();
+	int arr[1] = { 1 };
+	weight w = weight(1, arr);
+	l->add(0, w);
+	l->remove(0);
+	assertEquals("(0)", l->toString(), "Test LinkedListRemove");
+}
+
 void RunAllLinkedListUnitTests() {
 	TestLinkedListConstructor();
 	TestLinkedListAdding();
+	TestLinkedListIn();
 }
 
 #endif // !LINKED_LIST_UNIT_TEST_H

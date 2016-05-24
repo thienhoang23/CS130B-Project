@@ -1,14 +1,14 @@
 #include "Edge.h"
 #include "Weight.h"
 
-Edge::Edge(int v1, int v2, weight w) {
+Edge::Edge(int v1, int v2, weight* w) {
 	this->v1 = v1;
 	this->v2 = v2;
 	this->w = w;
 }
 
 int Edge::compare(Edge e) {
-	return this->w.compare(e.getWeight());
+	return this->w->compare(*e.getWeight());
 }
 
 Edge::Edge(const Edge& src) {
@@ -22,9 +22,4 @@ Edge& Edge::operator=(const Edge& rhs) {
 	this->v2 = rhs.v2;
 	this->w = rhs.w;
 	return *this;
-}
-
-Edge::Edge() {
-	v1 = v2 = 0;
-	w = weight();
 }

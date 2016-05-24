@@ -13,6 +13,8 @@ public:
 	Graph(int numV);
 	void addEdges(int v1, int v2, weight w);
 	std::string toString();
+	bool isKnownNeighbor(int v1,int v2);
+	bool isNeighbor(int v1, int v2);
 	//TO DO: DESTRUCTOR
 };
 #endif // !_GRAPH_H_

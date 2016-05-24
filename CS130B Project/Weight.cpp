@@ -14,6 +14,13 @@ weight::~weight() {
 	delete[] vector;
 }
 
+weight::weight(int dim) {
+	this->dim = dim;
+	this->vector = new int[dim];
+	for (int i = 0; i < dim; i++)
+		this->vector[i] = 0;
+}
+
 int weight::compare(weight w) {
 	if (min(this->vector, this->dim) < min(w.vector, w.dim))
 		return -1;
@@ -44,11 +51,6 @@ weight& weight::operator =(const weight& w){
 		this->vector[i] = w.vector[i];
 	return *this;
 };
-
-weight::weight() {
-	dim = 0;
-	vector = nullptr;
-}
 
 std::string weight::toString(){
 	if(vector == nullptr)

@@ -4,12 +4,11 @@
 
 class Edge {
 private:
-	weight w;
+	weight* w;
 	int v1, v2;
 public:
-	Edge();
-	Edge(int v1,int v2,weight w);
-	weight getWeight() { return w; }
+	Edge(int v1,int v2,weight* w);
+	weight* getWeight() { return w; }
 	int compare(Edge e);
 	int getV1() { return v1; }
 	int getV2() { return v2; }

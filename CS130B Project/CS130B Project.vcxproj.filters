@@ -51,10 +51,13 @@
     <ClInclude Include="EdgeUnitTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Heap.h">
+    <ClInclude Include="ArrayofEdges.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeapUnitTest.h">
+    <ClInclude Include="SpanningTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrippletEdges.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,7 +83,13 @@
     <ClCompile Include="tddFuncs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Heap.cpp">
+    <ClCompile Include="ArrayofEdges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SpanningTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrippletEdges.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
