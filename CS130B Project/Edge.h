@@ -20,7 +20,8 @@ public:
 	Edge(const Edge& src);
 	Edge& operator =(const Edge& rhs);
 	friend bool operator ==(Edge& e1, Edge& e2) {
-		if (e1.getV1() == e2.getV1() && e2.getV2() == e2.getV2())
+		if ((e1.getV1() == e2.getV1() && e2.getV2() == e2.getV2()) ||
+			(e1.getV1() == e2.getV2() && e2.getV2() == e2.getV1()))
 			return true;
 		return false;
 	}

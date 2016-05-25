@@ -7,10 +7,12 @@
 class Graph {
 protected:
 	Vertex* g;
-	int numV,numE;
+	int numV, numE;
 public:
-	Graph(int numV,int numE);
+	Graph(int numV, int numE);
 	Graph(int numV);
+	int getNumV() { return numV; }
+	int getNumE() { return numE; }
 	Vertex getVertex(int i) { return g[i]; }
 	void addEdges(int v1, int v2, weight w);
 	std::string toString();

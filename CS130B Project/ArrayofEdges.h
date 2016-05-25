@@ -36,6 +36,12 @@ public:
 	Edge BestPossibleAddition() { return array[current].e; }
 	ArrayofEdges& operator =(const ArrayofEdges& rhs);
 	void DetectCycleFormingEdges(SpanningTree& const st);
+	void SetAvail(Edge e, int avail) {
+		for (int i = 0; i < numE; i++) {
+			if (array[i].e == e)
+				array[i].avail = avail;
+		}
+	}
 }
 
 #endif // !ARRAY_OF_EDGES_H_

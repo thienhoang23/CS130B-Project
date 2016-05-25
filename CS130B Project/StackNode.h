@@ -1,7 +1,6 @@
 #ifndef STACK_NODE_H
 #define STACK_NODE_H
 
-#include <string>
 
 struct StackNode {
 	//Variables

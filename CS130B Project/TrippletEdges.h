@@ -4,6 +4,8 @@
 
 struct TrippletEdges {
 	//Variables
+	//e1: Cycle forming edge
+	//e2: Cycle breaking edge
 	Edge e1, e2;
 	int ofv;
 	//Constructor
@@ -21,6 +23,12 @@ struct TrippletEdges {
 		this->e1 = e1;
 		this->e2 = e2;
 		this->ofv = ofv;
+	}
+	TrippletEdges& operator=(TrippletEdges& const rhs) {
+		this->e1 = rhs.e1;
+		this->e2 = rhs.e2;
+		this->ofv = rhs.ofv;
+		return *this;
 	}
 };
 
