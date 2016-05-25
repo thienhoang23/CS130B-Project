@@ -17,4 +17,3 @@ void SpanningTree::removeEdge(int v1, int v2) {
 void SpanningTree::removeEdge(Edge* e) {
 	removeEdge(e->getV1(), e->getV2());
 }
-

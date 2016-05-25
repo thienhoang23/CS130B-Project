@@ -11,6 +11,7 @@ protected:
 public:
 	Graph(int numV,int numE);
 	Graph(int numV);
+	Vertex getVertex(int i) { return g[i]; }
 	void addEdges(int v1, int v2, weight w);
 	std::string toString();
 	bool isKnownNeighbor(int v1,int v2);

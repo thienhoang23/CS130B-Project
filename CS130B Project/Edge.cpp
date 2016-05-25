@@ -23,3 +23,12 @@ Edge& Edge::operator=(const Edge& rhs) {
 	this->w = rhs.w;
 	return *this;
 }
+
+std::string Edge::toString() {
+	std::string result = "(";
+	result += v1;
+	result += ",";
+	result += v2;
+	result += ")";
+	return result;
+}

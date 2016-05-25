@@ -110,6 +110,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Algortithm.h" />
+    <ClInclude Include="ArrayNode.h" />
     <ClInclude Include="ArrayofEdges.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="EdgeUnitTest.h" />
@@ -120,6 +122,8 @@
     <ClInclude Include="LinkedListUnitTest.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="SpanningTree.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="StackNode.h" />
     <ClInclude Include="tddFuncs.h" />
     <ClInclude Include="TrippletEdges.h" />
     <ClInclude Include="Vertex.h" />
@@ -133,8 +137,8 @@
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SpanningTree.cpp" />
+    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="tddFuncs.cpp" />
-    <ClCompile Include="TrippletEdges.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="Weight.cpp" />
   </ItemGroup>
