@@ -33,10 +33,10 @@ public:
 			return true;
 		return false;
 	}
-	friend bool operator <(Edge& w1, Edge& w2) {
+	friend bool operator <(Edge& e1, Edge& e2) {
 		if (e1.compare(e2) == -1)
 			return true;
-		return false
+		return false;
 	}
 	std::string toString();
 	//TO DO: DESTRUCTOR

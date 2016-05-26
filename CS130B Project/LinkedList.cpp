@@ -62,6 +62,13 @@ bool LinkedList::in(int vetex_id) {
 void LinkedList::remove(int vertex_id) {
 	if (in(vertex_id) == false)
 		return;
+	if (head->vertex_id == vertex_id) {
+		//CHECL FOR WHEN THE TARGET IS AT HEAD
+		Node* temp = head;
+		head = head->next;
+		delete temp;
+		return;
+	}
 	for (Node* cur = head; cur != nullptr; cur = cur->next)
 		if (cur->next->vertex_id == vertex_id) {
 			Node* temp = cur->next;
@@ -69,4 +76,13 @@ void LinkedList::remove(int vertex_id) {
 			delete temp;
 		}
 	return;
+}
+
+Node* LinkedList::getNode(int vertex_id) {
+	if (in(vertex_id) == false)
+		return nullptr;
+	for (Node* cur = head; cur != nullptr; cur = cur->next)
+		if (cur->vertex_id == vertex_id)
+			return cur;
+	return nullptr;
 }

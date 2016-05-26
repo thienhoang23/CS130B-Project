@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Node.h"
+#include "Weight.h"
 
 
 Graph::Graph(int numV, int numE) {

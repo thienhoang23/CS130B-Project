@@ -12,6 +12,7 @@ public:
 	Node* getHead(){return head;}
 	void add(int id, weight w);
 	void add(Node* n);
+	Node* getNode(int vertex_id);
 	LinkedList();
 	//LinkedList(const LinkedList& l);
 	//LinkedList& operator =(const LinkedList& l);

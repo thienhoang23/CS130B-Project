@@ -3,6 +3,11 @@
 #include <iostream>
 #include <string>
 
+weight::weight() {
+	this->dim = 0;
+	this->vector = nullptr;
+}
+
 weight::weight(int dim, int* vector) {
 	this->dim = dim;
 	this->vector = new int[dim];

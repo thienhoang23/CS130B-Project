@@ -1,4 +1,4 @@
-#ifndef ARRAY_OF_EDGES_H_
+	#ifndef ARRAY_OF_EDGES_H_
 #define ARRAY_OF_EDGES_H_
 
 #include "ArrayNode.h"
@@ -16,7 +16,7 @@ public:
 	void addEdge(Edge e);
 	void addEdge(Edge* e);
 	Edge getEdgeAt(int i) { return array[i].e; }
-	ArrayNode getEdgeWrapperAt(int i) { retrun array[i]; }
+	ArrayNode getEdgeWrapperAt(int i) { return this->array[i]; }
 	bool in(Edge e);
 	void remove(Edge e);
 	void remove(Edge* e);
@@ -42,6 +42,6 @@ public:
 				array[i].avail = avail;
 		}
 	}
-}
+};
 
 #endif // !ARRAY_OF_EDGES_H_

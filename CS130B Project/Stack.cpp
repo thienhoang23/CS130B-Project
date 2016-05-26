@@ -3,7 +3,7 @@
 #include <string>
 
 Stack::Stack() {
-	head = nullptr;
+	this->head = nullptr;
 }
 
 //DESCTRUCTOR

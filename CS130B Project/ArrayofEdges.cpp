@@ -3,10 +3,10 @@
 #include "Weight.h"
 #include "SpanningTree.h"
 
-ArrayofEdges::ArrayofEdges(int dim) {
+ArrayofEdges::ArrayofEdges(int numE) {
 	this->numE = numE;
 	this->current = 0;
-	array = new ArrayNode[numE];
+	this->array = new ArrayNode[numE];
 }
 
 void ArrayofEdges::addEdge(Edge e) {
@@ -48,7 +48,7 @@ std::string ArrayofEdges::toString() {
 void ArrayofEdges::UpdateOFV(weight w) {
 	for (int i = 0; i < numE; i++) {
 		if (array[i].avail == ArrayNode::AVAILABLE) {
-			weight temp = *array[i].e.getWeight;
+			weight temp = *array[i].e.getWeight();
 			temp = temp + w;
 			array[i].ofv = max(temp.getVector(), temp.getDim());
 		}
@@ -79,7 +79,7 @@ ArrayofEdges& ArrayofEdges::operator =(const ArrayofEdges& rhs) {
 void ArrayofEdges::DetectCycleFormingEdges(SpanningTree& const st) {
 	for (int i = 0; i < numE; i++)
 		if (array[i].avail != ArrayNode::USED_IN_TREE)
-			if (st.getVertex(array[i].e.getV1()).getKnown == true &&
-				st.getVertex(array[i].e.getV2()).getKnown == true)
+			if ((st.getVertex(array[i].e.getV1()).getKnown() == true) &&
+				(st.getVertex(array[i].e.getV2()).getKnown() == true))
 				array[i].isCycle = true;
 }

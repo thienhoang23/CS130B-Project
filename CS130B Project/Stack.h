@@ -1,6 +1,8 @@
-#ifndef STACK_NODE_H_
-#define STACK_NODE_H_
+#ifndef STACK_H_
+#define STACK_H_
+
 #include "StackNode.h"
+#include <string>
 
 class Stack
 {
@@ -22,5 +24,5 @@ public:
 		return head->vertex_id;
 	}
 	~Stack();
-}
-#endif // !STACK_NODE_H_
+};
+#endif // !STACK_H_
