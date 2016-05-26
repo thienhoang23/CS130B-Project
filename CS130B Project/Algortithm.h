@@ -32,15 +32,22 @@ void LocalIterativeImprovment(ArrayofEdges& E, SpanningTree& ST, Graph& const G)
 	//SUB THE BEST CYCLE FORMING EDGE FOR THE CYCLE BREAKING EDGE
 	if (index >= 0) {
 		ST.addEdges(ArrayofTE[index].e1);
+		ST.removeEdge(ArrayofTE[index].e2);
 		E.remove(ArrayofTE[index].e2);
 		E.SetAvail(ArrayofTE[index].e1, ArrayNode::NOT_USED_IN_TREE);
 	}
 }
 
-//TO DO
 TrippletEdges FindBestPossibleReplacementEdge(SpanningTree& const ST, int start, int end, Edge e) {
 	Stack* stack= new Stack();
-
+	stack->push(start);
+	int val = ST.getVertex(start).getList()->getHead()->vertex_id;
+	Node*
+	while (val != end) {
+		if()
+		val = ST.getVertex(cur).getList()->getHead()->vertex_id
+	}
+	//BASE CASE: when cur == end
 }
 
 SpanningTree KILI(Graph& const G, ArrayofEdges& E, SpanningTree& ST) {

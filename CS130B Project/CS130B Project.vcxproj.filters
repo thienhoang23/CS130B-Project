@@ -9,6 +9,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Header Files\UnitTests">
+      <UniqueIdentifier>{e8d30865-cd8c-44aa-9ac9-db74eea672cb}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -33,22 +36,7 @@
     <ClInclude Include="Weight.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tddFuncs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WeightUnitTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LinkedListUnitTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphUnitTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EdgeUnitTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ArrayofEdges.h">
@@ -71,6 +59,33 @@
     </ClInclude>
     <ClInclude Include="Algortithm.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedListUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="WeightUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="tddFuncs.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="StackUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="SpanningTreeUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="TrippletEdgeUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayofEdgesUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

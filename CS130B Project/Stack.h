@@ -12,6 +12,9 @@ public:
 	void push(int id);
 	void push(StackNode* n);
 	std::string toString();
+	bool isEmpty() {
+		return head == nullptr;
+	}
 	StackNode* pop();
 	int peek() {
 		if (head == nullptr)
