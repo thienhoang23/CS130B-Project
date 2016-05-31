@@ -14,6 +14,7 @@ void SpanningTree::removeEdge(int v1, int v2) {
 	g[v1].RemoveConnection(v2);
 	g[v2].RemoveConnection(v1);
 	*this->w = *this->w - w_del;
+	this->numE--;
 	this->updateOFV();
 }
 

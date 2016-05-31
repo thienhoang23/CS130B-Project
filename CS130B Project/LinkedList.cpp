@@ -63,19 +63,38 @@ void LinkedList::remove(int vertex_id) {
 	if (in(vertex_id) == false)
 		return;
 	if (head->vertex_id == vertex_id) {
-		//CHECL FOR WHEN THE TARGET IS AT HEAD
+		//CHECK FOR WHEN THE TARGET IS AT HEAD
 		Node* temp = head;
-		head = head->next;
-		delete temp;
-		return;
-	}
-	for (Node* cur = head; cur != nullptr; cur = cur->next)
-		if (cur->next->vertex_id == vertex_id) {
-			Node* temp = cur->next;
-			cur->next = cur->next->next;
+		if (tail == head) {
+			head = tail = nullptr;
 			delete temp;
 		}
-	return;
+		else {
+			head = head->next;
+			delete temp;
+		}
+		return;
+	}
+	for (Node* cur = head; cur->next != nullptr; cur = cur->next) {
+		if (cur->next->vertex_id == vertex_id) {
+			//next node is the one we want to delete
+			Node* temp = cur->next;
+			if (tail == cur->next) //next node is the last node
+			{
+				tail = cur;
+				cur->next = cur->next->next;
+				delete temp;
+				return;
+			}
+			else
+			{
+				cur->next = cur->next->next;
+				delete temp;
+				return;
+			}
+			return;
+		}
+	}
 }
 
 Node* LinkedList::getNode(int vertex_id) {

@@ -57,9 +57,6 @@
     <ClInclude Include="ArrayNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Algortithm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EdgeUnitTest.h">
       <Filter>Header Files\UnitTests</Filter>
     </ClInclude>
@@ -81,10 +78,34 @@
     <ClInclude Include="SpanningTreeUnitTest.h">
       <Filter>Header Files\UnitTests</Filter>
     </ClInclude>
-    <ClInclude Include="TrippletEdgeUnitTest.h">
+    <ClInclude Include="ArrayofEdgesUnitTest.h">
       <Filter>Header Files\UnitTests</Filter>
     </ClInclude>
-    <ClInclude Include="ArrayofEdgesUnitTest.h">
+    <ClInclude Include="AlgorithmTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PILIArrayofEdges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DisjointSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SILIArrayofEdges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DisjointSetArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SILIArrayofEdgesUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="DisjointSetUnitTest.h">
+      <Filter>Header Files\UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="DisjointSetArrayUnitTest.h">
       <Filter>Header Files\UnitTests</Filter>
     </ClInclude>
   </ItemGroup>

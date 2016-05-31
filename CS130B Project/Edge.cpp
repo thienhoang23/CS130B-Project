@@ -1,5 +1,6 @@
 #include "Edge.h"
 #include "Weight.h"
+#include <string>
 
 Edge::Edge(int v1, int v2, weight* w) {
 	this->v1 = v1;
@@ -26,9 +27,9 @@ Edge& Edge::operator=(const Edge& rhs) {
 
 std::string Edge::toString() {
 	std::string result = "(";
-	result += v1;
+	result += std::to_string(v1);
 	result += ",";
-	result += v2;
+	result += std::to_string(v2);
 	result += ")";
 	return result;
 }

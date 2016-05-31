@@ -14,6 +14,7 @@ public:
 	{
 	}
 	weight* getWeight() { return w; }
+	int getDim() { return w->getDim(); }
 	int getOFV() { return ofv; }
 	void addEdges(int v1, int v2, weight w);
 	void addEdges(int v1, int v2, weight* w) {

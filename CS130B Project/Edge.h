@@ -20,8 +20,8 @@ public:
 	Edge(const Edge& src);
 	Edge& operator =(const Edge& rhs);
 	friend bool operator ==(Edge& e1, Edge& e2) {
-		if ((e1.getV1() == e2.getV1() && e2.getV2() == e2.getV2()) ||
-			(e1.getV1() == e2.getV2() && e2.getV2() == e2.getV1()))
+		if ((e1.getV1() == e2.getV1() && e1.getV2() == e2.getV2()) ||
+			(e1.getV1() == e2.getV2() && e1.getV2() == e2.getV1()))
 			return true;
 		return false;
 	}
@@ -38,7 +38,7 @@ public:
 			return true;
 		return false;
 	}
-	std::string toString();
+	std::string toString(); //(v1,v2)
 	//TO DO: DESTRUCTOR
 };
 #endif 

@@ -4,6 +4,8 @@
 #include "StackNode.h"
 #include <string>
 
+int static const EMPTY = -1;
+
 class Stack
 {
 private:
@@ -20,7 +22,7 @@ public:
 	StackNode* pop();
 	int peek() {
 		if (head == nullptr)
-			return -1;
+			return EMPTY;
 		return head->vertex_id;
 	}
 	~Stack();

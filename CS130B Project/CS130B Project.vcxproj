@@ -110,10 +110,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Algortithm.h" />
+    <ClInclude Include="AlgorithmTest.h" />
+    <ClInclude Include="Algorithm.h" />
     <ClInclude Include="ArrayNode.h" />
     <ClInclude Include="ArrayofEdges.h" />
     <ClInclude Include="ArrayofEdgesUnitTest.h" />
+    <ClInclude Include="DisjointSetArray.h" />
+    <ClInclude Include="DisjointSetArrayUnitTest.h" />
+    <ClInclude Include="DisjointSetUnitTest.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="EdgeUnitTest.h" />
     <ClInclude Include="Graph.h" />
@@ -122,6 +126,9 @@
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="LinkedListUnitTest.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="PILIArrayofEdges.h" />
+    <ClInclude Include="SILIArrayofEdges.h" />
+    <ClInclude Include="SILIArrayofEdgesUnitTest.h" />
     <ClInclude Include="SpanningTree.h" />
     <ClInclude Include="SpanningTreeUnitTest.h" />
     <ClInclude Include="Stack.h" />
@@ -129,8 +136,8 @@
     <ClInclude Include="StackUnitTest.h" />
     <ClInclude Include="tddFuncs.h" />
     <ClInclude Include="TrippletEdges.h" />
-    <ClInclude Include="TrippletEdgeUnitTest.h" />
     <ClInclude Include="Vertex.h" />
+    <ClInclude Include="DisjointSet.h" />
     <ClInclude Include="Weight.h" />
     <ClInclude Include="WeightUnitTest.h" />
   </ItemGroup>
