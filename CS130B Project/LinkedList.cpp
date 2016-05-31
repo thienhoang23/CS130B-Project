@@ -22,6 +22,8 @@ void LinkedList::add(Node* n) {
 		head = tail;
 		return;
 	}
+	if (this->in(n->vertex_id) == true)
+		return;
 	this->tail->next = n;
 	this->tail = n;
 }
@@ -32,6 +34,8 @@ void LinkedList::add(int id, weight w) {
 		head = tail;
 		return;
 	}
+	if (this->in(id) == true)
+		return;
 	this->tail->next = new Node(id, w);
 	this->tail = tail->next;
 }

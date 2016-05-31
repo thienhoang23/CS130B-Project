@@ -23,6 +23,8 @@ public:
 	}
 	void UpdateAvail(SpanningTree& const ST) {
 		for (int i = 0; i < this->numE; i++) {
+			if (this->array[i].avail == ArrayNode::USED_IN_TREE)
+				continue;
 			if (((ST.getVertex(this->array[i].e.getV1()).getKnown() == true) &&
 				(ST.getVertex(this->array[i].e.getV2()).getKnown() == false)) ||
 				((ST.getVertex(this->array[i].e.getV1()).getKnown() == false) &&

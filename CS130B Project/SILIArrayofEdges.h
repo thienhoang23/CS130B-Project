@@ -45,13 +45,23 @@ public:
 		}
 	}
 
+	void RegularUpdateOFV(weight w) {
+		for (int i = 0; i < numE; i++) {
+			if (array[i].avail != ArrayNode::USED_IN_TREE) {
+				weight temp = *array[i].e.getWeight();
+				temp = temp + w;
+				array[i].ofv = max(temp.getVector(), temp.getDim());
+			}
+		}
+	}
+
 	void UpdateBestPossibleAddition() {
 		int index = 0;
 		int minOFV = INT_MAX;
 		Edge minEdge = this->array[0].e;
 		for (int i = 0; i < numE; i++) {
 			if (array[i].isCycle == false) {
-				if (array[i].avail == ArrayNode::AVAILABLE &&
+				if (array[i].avail != ArrayNode::USED_IN_TREE &&
 					array[i].DSAvail == true) {
 					if (array[i].ofv < minOFV) {
 						minOFV = array[i].ofv;

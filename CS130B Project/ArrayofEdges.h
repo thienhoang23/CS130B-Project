@@ -75,6 +75,25 @@ public:
 				array[i].avail = avail;
 		}
 	}
+	void Sort() {
+		for (int i = 0; i<numE; i++){
+			for (int j = 0; j<numE - 1; j++){
+				if (array[j+1].e<array[j].e){
+					ArrayNode temp = array[j + 1];
+					array[j + 1] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+	}
+	std::string Output() {
+		std::string result = "";
+		for (int i = 0; i < numE; i++) {
+			if (array[i].avail == ArrayNode::USED_IN_TREE)
+				result += array[i].e.Output()+"\n";
+		}
+		return result;
+	}
 };
 
 #endif // !ARRAY_OF_EDGES_H_

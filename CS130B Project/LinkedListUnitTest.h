@@ -32,9 +32,9 @@ void TestLinkedListAdding(){
 	std::cout << "Adding by Node" << std::endl;
 	Node* n = new Node(0, w);
 	l->add(n);
-	assertEquals("(0,1,0)", l->toString(),"Adding by Node");
+	assertEquals("(0,1)", l->toString(),"Adding by Node");
 	assertEquals("0", l->getHead()->toString(), "Correct head position");
-	assertEquals("0", l->getTail()->toString(), "Correct tail position");
+	assertEquals("1", l->getTail()->toString(), "Correct tail position");
 	delete l;
 }
 

@@ -40,5 +40,13 @@ public:
 	}
 	std::string toString(); //(v1,v2)
 	//TO DO: DESTRUCTOR
+	std::string Output() {
+		std::string result = "";
+		if (v1 < v2)
+			result += std::to_string(v1) + " " + std::to_string(v2);
+		else
+			result += std::to_string(v2) + " " + std::to_string(v1);
+		return result;
+	}
 };
 #endif 

@@ -5,11 +5,13 @@
 
 weight::weight() {
 	this->dim = 0;
+	this->cur = 0;
 	this->vector = nullptr;
 }
 
 weight::weight(int dim, int* vector) {
 	this->dim = dim;
+	this->cur = dim-1;
 	this->vector = new int[dim];
 	for (int i = 0; i < dim; i++)
 		this->vector[i] = vector[i];
@@ -21,6 +23,7 @@ weight::~weight() {
 
 weight::weight(int dim) {
 	this->dim = dim;
+	this->cur = 0;
 	this->vector = new int[dim];
 	for (int i = 0; i < dim; i++)
 		this->vector[i] = 0;
@@ -107,7 +110,7 @@ bool operator >=(weight& w1, weight& w2) {
 }
 
 bool operator <(weight& w1, weight& w2) {
-	return !(w1>=w2);
+	return (w1.compare(w2)) == -1;
 }
 
 bool operator <=(weight& w1, weight& w2) {

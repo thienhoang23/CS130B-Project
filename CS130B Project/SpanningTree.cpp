@@ -2,6 +2,8 @@
 #include "Edge.h"
 
 void SpanningTree::addEdges(int v1, int v2, weight w) {
+	if (isNeighbor(v1, v2))
+		return;
 	Graph::addEdges(v1, v2, w);
 	g[v1].setKnown(true);
 	g[v2].setKnown(true);

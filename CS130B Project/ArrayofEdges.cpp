@@ -95,11 +95,14 @@ void ArrayofEdges::DetectCycleFormingEdges(SpanningTree& const st) {
 	for (int i = 0; i < numE; i++) {
 		if (array[i].avail != ArrayNode::USED_IN_TREE) {
 			if ((st.getVertex(array[i].e.getV1()).getKnown() == true) &&
-				(st.getVertex(array[i].e.getV2()).getKnown() == true)) 
+				(st.getVertex(array[i].e.getV2()).getKnown() == true) && 
+				(st.CanGetFrom(array[i].e.getV1(), array[i].e.getV2(),-1)==true))
 			{
 				array[i].isCycle = true;
 			}
+			else {
+				array[i].isCycle = false;
+			}
 		}
-
 	}
 }

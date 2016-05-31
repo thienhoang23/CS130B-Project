@@ -327,7 +327,7 @@ void FILITest3() {
 	assertEquals(5, ST->getOFV(), "FILI TEST 3: Correct OFV of the entire Tree");
 }
 
-//PILI TEST ON 3 VERTICES; No Local Iterative Improvement
+//SILI TEST ON 3 VERTICES; No Local Iterative Improvement
 void SILITest1() {
 	Graph* G = new Graph(3);
 	SpanningTree* ST = new SpanningTree(3, 2);
@@ -355,8 +355,93 @@ void SILITest1() {
 	assertEquals(7, ST->getOFV(), "SILI TEST 1: Correct OFV of the entire Tree");
 }
 
+//SILI TEST ON 4 VERTICES; No Local Iterative Improvement
+void SILITest2() {
+	Graph* G = new Graph(4);
+	SpanningTree* ST = new SpanningTree(4, 2);
+	SILIArrayofEdges* SAE = new SILIArrayofEdges(6);
+	int arr12[2] = { 22,18 };
+	int arr13[2] = { 15,30 };
+	int arr14[2] = { 22,33 };
+	int arr23[2] = { 13,20 };
+	int arr24[2] = { 1,2 };
+	int arr34[2] = { 10,20 };
+	weight* w12 = new weight(2, arr12);
+	weight* w13 = new weight(2, arr13);
+	weight* w14 = new weight(2, arr14);
+	weight* w23 = new weight(2, arr23);
+	weight* w24 = new weight(2, arr24);
+	weight* w34 = new weight(2, arr34);
+	Edge* e12 = new Edge(1, 2, w12);
+	Edge* e13 = new Edge(1, 3, w13);
+	Edge* e14 = new Edge(1, 4, w14);
+	Edge* e23 = new Edge(2, 3, w23);
+	Edge* e24 = new Edge(2, 4, w24);
+	Edge* e34 = new Edge(3, 4, w34);
+	G->addEdges(e12);
+	G->addEdges(e13);
+	G->addEdges(e14);
+	G->addEdges(e23);
+	G->addEdges(e24);
+	G->addEdges(e34);
+	SAE->addEdge(e12);
+	SAE->addEdge(e13);
+	SAE->addEdge(e14);
+	SAE->addEdge(e23);
+	SAE->addEdge(e24);
+	SAE->addEdge(e34);
+	SILI(*G, *SAE, *ST);
+	int arr_test[2] = { 33,40 };
+	weight* w_test = new weight(2, arr_test);
+	//assertEquals("0->(1)\n1->(2,0)\n2->(1)",ST->toString(),"Correct Spanning Tree");
+	assertEquals(w_test->toString(), ST->getWeight()->toString(), "SILI TEST 2: Correct weight of the entire Tree");
+	assertEquals(40, ST->getOFV(), "SILI TEST 2: Correct OFV of the entire Tree");
+}
+
+//PILI TEST ON 4 VERTICES; With Local Iterative Improvement
+void SILITest3(){
+	Graph* G = new Graph(4);
+	SpanningTree* ST = new SpanningTree(4, 3);
+	SILIArrayofEdges* SAE = new SILIArrayofEdges(6);
+	int arr13[3] = { 1,0,0 };
+	int arr12[3] = { 1000,0,0 };
+	int arr23[3] = { 1000,0,0 };
+	int arr14[3] = { 0,5,0 };
+	int arr34[3] = { 3,0,0 };
+	int arr24[3] = { 4,0,0 };
+	weight* w13 = new weight(3, arr13);
+	weight* w12 = new weight(3, arr12);
+	weight* w23 = new weight(3, arr23);
+	weight* w14 = new weight(3, arr14);
+	weight* w34 = new weight(3, arr34);
+	weight* w24 = new weight(3, arr24);
+	Edge* e13 = new Edge(1, 3, w13);
+	Edge* e12 = new Edge(1, 2, w12);
+	Edge* e23 = new Edge(2, 3, w23);
+	Edge* e14 = new Edge(1, 4, w14);
+	Edge* e34 = new Edge(3, 4, w34);
+	Edge* e24 = new Edge(2, 4, w24);
+	G->addEdges(e13);
+	G->addEdges(e12);
+	G->addEdges(e23);
+	G->addEdges(e14);
+	G->addEdges(e34);
+	G->addEdges(e24);
+	SAE->addEdge(e13);
+	SAE->addEdge(e12);
+	SAE->addEdge(e23);
+	SAE->addEdge(e14);
+	SAE->addEdge(e34);
+	SAE->addEdge(e24);
+	SILI(*G, *SAE, *ST);
+	int arr_test[3] = { 5,5,0 };
+	weight* w_test = new weight(3, arr_test);
+	assertEquals(w_test->toString(), ST->getWeight()->toString(), "SILI TEST 3: Correct weight of the entire Tree");
+	assertEquals(5, ST->getOFV(), "SILI TEST 3: Correct OFV of the entire Tree");
+}
+
 void RunAllKILITest() {
-	/*KILITest1();
+	KILITest1();
 	KILITest2();
 	KILITest3();
 	PILITest1();
@@ -364,8 +449,10 @@ void RunAllKILITest() {
 	PILITest3();
 	FILITest1();
 	FILITest2();
-	FILITest3();*/
+	FILITest3();
 	SILITest1();
+	SILITest2();
+	SILITest3();
 }
 
 #endif // !ALGORITHM_TEST_H_

@@ -26,6 +26,8 @@ public:
 	}
 	int getCurSize() { return curSize; }
 	void Union(int v1, int v2) {
+		if (inSameSet(v1, v2))
+			return;
 		array[v1].Union(array[v2]);
 	}
 	bool inSameSet(int v1, int v2) {

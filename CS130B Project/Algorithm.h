@@ -102,7 +102,7 @@ void LocalIterativeImprovement(ArrayofEdges& AE, SpanningTree& ST, Graph& const 
 
 		//SUB THE BEST CYCLE FORMING EDGE FOR THE CYCLE BREAKING EDGE
 		if (index >= 0) {
-			cout << "SUBING " << ArrayofTE[index].e1.toString() << " TO " << ArrayofTE[index].e2.toString() << endl;
+			//cout << "SUBING " << ArrayofTE[index].e1.toString() << " TO " << ArrayofTE[index].e2.toString() << endl;
 			ST.addEdges(ArrayofTE[index].e1);
 			ST.removeEdge(&ArrayofTE[index].e2);
 			AE.remove(ArrayofTE[index].e1);
@@ -144,18 +144,20 @@ void SILI(Graph& const G, SILIArrayofEdges& SAE, SpanningTree& ST) {
 		for (int i = 1; i <= DSA->getCurSize(); i++) {
 			//Only Update with regard to the number of disjoint sets
 			SAE.UpdateAvailForSet(*DSA, i);
-			SAE.UpdateBestPossibleAddition(); //Update the best edge for each set
-			AE->addEdge(SAE.getEdgeAt(SAE.getCurrent()));
+			SAE.Update(ST); //Update the best edge for each set
+			AE->addEdge(SAE.BestPossibleAddition());
 		}
-		AE->DetectCycleFormingEdges(ST);
-		for (int i = 1; i <= DSA->getCurSize(); i++) {
-			if (AE->getEdgeWrapperAt(i).avail == ArrayNode::AVAILABLE &&
+		for (int i = 0; i < DSA->getCurSize(); i++) {
+			AE->DetectCycleFormingEdges(ST);
+			if (AE->getEdgeWrapperAt(i).avail != ArrayNode::USED_IN_TREE &&
 				AE->getEdgeWrapperAt(i).isCycle == false) {
 				ST.addEdges(AE->getEdgeAt(i));
 				SAE.remove(AE->getEdgeAt(i));
 				DSA->Union(AE->getEdgeAt(i).getV1(), AE->getEdgeAt(i).getV2());
 			}
 		}
+		SAE.DetectCycleFormingEdges(ST);
+		SAE.RegularUpdateOFV(*ST.getWeight());
 		LocalIterativeImprovement(SAE, ST, G);
 		DSA->Redefinition();
 	}
